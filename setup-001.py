@@ -19,6 +19,6 @@ for x in 'types colors items sales'.split():
   df = eval(x)
   df.to_csv(f'data/{x}.csv', index=False)
   df.to_excel(f'data/{x}.xlsx', index=False)
-  df.to_sql('data/db', index=False, con=con, if_exists='replace')
+  df.to_sql(x, index=False, con=con, if_exists='replace')
 
 print("Done.")
