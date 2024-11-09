@@ -13,7 +13,7 @@ sales = pd.read_csv("https://raw.githubusercontent.com/pyville-dotcom/datasets/r
 if not os.path.isdir('data'):
   os.mkdir('data')
 
-con = sqlite3.connect('db')
+con = sqlite3.connect('data/db')
 
 for x in 'types colors items sales'.split():
   df = eval(x)
