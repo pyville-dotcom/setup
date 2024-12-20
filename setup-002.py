@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import sqlite3
 
-print("Setting up the environment...", end=" ")
-
 if not os.path.isdir('data'):
   os.mkdir('data')
 
@@ -26,5 +24,3 @@ for tsv in tsvs:
   df.to_csv(f'data/{x}.csv', index=False)
   df.to_excel(f'data/{x}.xlsx', index=False)
   df.to_sql(x, index=False, con=con, if_exists='replace', dtype=dtype)
-
-print("Done.")
